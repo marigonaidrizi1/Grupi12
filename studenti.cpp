@@ -78,5 +78,17 @@ int main() {
         merrStudent(studentet[i]);
     }
 }
+cout<<"................"<<endl;
+cout<<"Informacioni per te gjithe studentet:"<<endl;
+for (int i=0;i<numriStudenteve;i++){
+shfaqStudentin(studentet[i]);
+cout<<"................"<<endl;
+}
 
+Gjetja e studentit me mesataren me te larte 
+Student studentiMeMesT = gjejStudentinMeMesatarenMeTeLarte(studentet,numriStudenteve);
+cout<<"Studenti me mesataren me te larte eshte : "<<endl;
+shfaqStudentin(studentiMeMesT);
+return 0 ;
+}
 
