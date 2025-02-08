@@ -21,3 +21,30 @@ bool kaKaluarProvimet(const double nota[],int numriNotave){
     }
     return true;
 }
+
+
+Student gjejStudentinMeMesatarenMeTeLarte(const Student studentet[], int numriStudenteve) {
+    int indeksMax = 0;
+    double mesMax = llogaritMesataren(studentet[0].nota, 3);
+
+    for (int i = 1; i < numriStudenteve; i++) {
+        double mesatarja = llogaritMesataren(studentet[i].nota, 3);
+        if (mesatarja > mesMax) {
+            mesMax = mesatarja;
+            indeksMax = i;
+        }
+    }
+
+    return studentet[indeksMax];
+}
+
+int main() {
+    const int numriStudenteve = 3; 
+    Student studentet[numriStudenteve]; 
+
+
+    for (int i = 0; i < numriStudenteve; i++) {
+        cout << "Futni të dhënat për studentin " << i + 1 << ":" << endl;
+        merrStudent(studentet[i]);
+    }
+}
