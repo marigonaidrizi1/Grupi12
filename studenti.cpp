@@ -22,38 +22,10 @@ bool kaKaluarProvimet(const double nota[],int numriNotave){
     return true;
 }
 
-
-Student gjejStudentinMeMesatarenMeTeLarte(const Student studentet[], int numriStudenteve) {
-    int indeksMax = 0;
-    double mesMax = llogaritMesataren(studentet[0].nota, 3);
-
-    for (int i = 1; i < numriStudenteve; i++) {
-        double mesatarja = llogaritMesataren(studentet[i].nota, 3);
-        if (mesatarja > mesMax) {
-            mesMax = mesatarja;
-            indeksMax = i;
-        }
-    }
-
-    return studentet[indeksMax];
-}
-
-int main() {
-    const int numriStudenteve = 3; 
-    Student studentet[numriStudenteve]; 
-
-
-    for (int i = 0; i < numriStudenteve; i++) {
-        cout << "Futni të dhënat për studentin " << i + 1 << ":" << endl;
-        merrStudent(studentet[i]);
-    }
-}
-
-
 void merrStudent(Student& s) {
    cout << "Shkruani emrin e studentit: ";
    cin >> s.emri;
-   cout << "Shkruani moshën e studentit: ";
+   cout << "Shkruani mosh\x89n e studentit: ";
    cin >> s.mosha;
    cout << "Shkruani 3 notat e studentit: ";
    for (int i = 0; i < 3; i++) {
@@ -80,3 +52,31 @@ void shfaqStudentin(const Student& s) {
        cout << "Statusi: NUK KA KALUAR provimet." << endl;
    }
 }
+
+Student gjejStudentinMeMesatarenMeTeLarte(const Student studentet[], int numriStudenteve) {
+    int indeksMax = 0;
+    double mesMax = llogaritMesataren(studentet[0].nota, 3);
+
+    for (int i = 1; i < numriStudenteve; i++) {
+        double mesatarja = llogaritMesataren(studentet[i].nota, 3);
+        if (mesatarja > mesMax) {
+            mesMax = mesatarja;
+            indeksMax = i;
+        }
+    }
+
+    return studentet[indeksMax];
+}
+
+int main() {
+    const int numriStudenteve = 3; 
+    Student studentet[numriStudenteve]; 
+
+
+    for (int i = 0; i < numriStudenteve; i++) {
+        cout << "Futni t\x89 dh\x89nat p\x89r studentin " << i + 1 << ":" << endl;
+        merrStudent(studentet[i]);
+    }
+}
+
+
