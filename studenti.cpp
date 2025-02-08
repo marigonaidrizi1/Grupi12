@@ -48,3 +48,35 @@ int main() {
         merrStudent(studentet[i]);
     }
 }
+
+
+void merrStudent(Student& s) {
+   cout << "Shkruani emrin e studentit: ";
+   cin >> s.emri;
+   cout << "Shkruani moshën e studentit: ";
+   cin >> s.mosha;
+   cout << "Shkruani 3 notat e studentit: ";
+   for (int i = 0; i < 3; i++) {
+       cin >> s.nota[i];
+   }
+   cout << endl;
+}
+ 
+
+void shfaqStudentin(const Student& s) {
+   cout << "Emri: " << s.emri << endl;
+   cout << "Mosha: " << s.mosha << endl;
+   cout << "Notat: ";
+   for (int i = 0; i < 3; i++) {
+       cout << s.nota[i] << " ";
+   }
+   cout << endl;
+   cout << "Mesatarja: " << llogaritMesataren(s.nota, 3) << endl;
+ 
+   
+   if (kaKaluarProvimet(s.nota, 3)) {
+       cout << "Statusi: KA KALUAR provimet." << endl;
+   } else {
+       cout << "Statusi: NUK KA KALUAR provimet." << endl;
+   }
+}
